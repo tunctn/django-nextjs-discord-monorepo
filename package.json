@@ -1,0 +1,30 @@
+{
+  "name": "django-react-discord-test",
+  "private": true,
+  "scripts": {
+    "tunnel:web": "cloudflared tunnel --url http://localhost:3000",
+    "tunnel:server": "cloudflared tunnel --url http://localhost:8000",
+    "tunnel": "concurrently \"pnpm tunnel:web\" \"pnpm tunnel:server\"",
+    "build": "dotenv -- turbo build --no-daemon",
+    "build:web": "dotenv -- turbo build --filter=web...",
+    "start:web": "turbo start --filter=web",
+    "dev": "dotenv -- turbo dev --no-daemon --parallel",
+    "dev:tunnel": "concurrently \"pnpm dev\" \"pnpm tunnel\"",
+    "lint": "turbo lint",
+    "server": "turbo server --no-daemon --parallel",
+    "migrate": "turbo migrate --no-daemon",
+    "migrate:show": "turbo migrate:show --no-daemon",
+    "migrate:make": "turbo migrate:make --no-daemon",
+    "start:server": "turbo migrate && turbo start --filter=server",
+    "db:flush": "turbo db:flush --no-daemon"
+  },
+  "devDependencies": {
+    "cloudflared": "^0.5.3",
+    "concurrently": "^8.2.2",
+    "dotenv-cli": "^7.4.2",
+    "prettier": "^3.2.5",
+    "turbo": "^2.0.14",
+    "typescript": "^5.4.5"
+  },
+  "packageManager": "pnpm@9.8.0"
+}
