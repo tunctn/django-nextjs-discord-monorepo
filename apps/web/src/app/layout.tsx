@@ -32,7 +32,7 @@ export default function RootLayout({
       >
         <ThemeProvider attribute="class">
           <div
-            className="flex h-full min-h-screen w-full flex-col border"
+            className="flex h-full min-h-screen w-full flex-col"
             suppressHydrationWarning
           >
             <Providers>
