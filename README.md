@@ -3,7 +3,7 @@
 To install packages of every workspace
 
 ```
-yarn install
+pnpm install
 ```
 
 Setup virtual environment for python
@@ -19,7 +19,7 @@ pip install -r requirements.txt
 To build all apps and packages, run the following command:
 
 ```
-yarn build
+pnpm build
 ```
 
 ### Develop (Front-end)
@@ -27,19 +27,19 @@ yarn build
 To develop all typescript apps and packages, run the following command:
 
 ```
-yarn dev
+pnpm dev
 ```
 
 To add packages:
 
 ```
-yarn <workspace> add <package-name>
+pnpm install <package-name> --filter=<workspace>
 ```
 
 To remove packages:
 
 ```
-yarn <workspace> remove <package-name>
+pnpm uninstall <package-name> --filter=<workspace>
 ```
 
 ### Develop (Django Back-end)
@@ -47,31 +47,31 @@ yarn <workspace> remove <package-name>
 To develop django app, run the following:
 
 ```
-yarn server
+pnpm server
 ```
 
 To make migrations:
 
 ```
-yarn migrate:make
+pnpm migrate:make
 ```
 
 To show migrations:
 
 ```
-yarn migrate:show
+pnpm migrate:show
 ```
 
 To apply migrations:
 
 ```
-yarn migrate
+pnpm migrate
 ```
 
 To flush database:
 
 ```
-yarn db:flush
+pnpm db:flush
 ```
 
 ### Remote Caching
